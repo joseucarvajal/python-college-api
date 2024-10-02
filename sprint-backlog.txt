@@ -1,0 +1,16 @@
+Vas a crear un API en con FastAPI[standard]. Este API debe permitir:
+1. Crear un curso con los siguientes datos:
+    - Id: Unico y autogenerado con UUID
+    - Nombre: String
+    - Fecha de inicio: Date
+    - Fecha de finalizacion: Date
+    - porcentage corte 1: Float
+    - porcentage corte 2: Float
+    - porcentage corte 3: Float
+    
+2. Listar los cursos
+
+La base de datos debe ser de tipo SQL: SQLite
+Debes utilizar un ORM para la base de datos.
+Utiliza clean architecture para la estructura del proyecto.
+Evita usar operaciones asyncronas.
