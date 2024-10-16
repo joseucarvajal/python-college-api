@@ -1,0 +1,18 @@
+Fecha de inicio del proyecto: Octubre 15.
+
+Deben identificar en una empresa o idea de emprendimiento, un caso real donde se necesite implementar un sistema de información.
+Van a identificar y crear un documento y presentación en Power Point los siguientes elementos de un área de la empresa o de la idea de emprendimiento:
+    1. Cuáles son los objetivos del área o idea de emprendimiento
+    2. Cuáles son las tareas o actividades que se realizan de forma manual y que se van a realizar con el sistema que ustedes van a implementar.
+
+El proyecto a realizar es una aplicación, con backend y frontend que debe contener lo siguiente:
+1. Gestionar al menos 4 objetos con al menos 5 casos de uso
+2. Un API construido con FastAPI
+3. Personalizar los mensajes de validación
+
+Parámetros técnicos de entrega del proyecto:
+    1. Crear un repositorio en GitHub para el proyecto
+    2. Crear varios branches
+
+Calendario:
+    1. Inicio de exposiciones el 12 de noviembre. Se obtendrá el alumno que va a exponer de forma aleatoria
