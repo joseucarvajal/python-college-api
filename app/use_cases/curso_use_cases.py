@@ -5,8 +5,11 @@ from datetime import date
 
 def crear_curso(db: Session, nombre: str, fecha_inicio: date, fecha_finalizacion: date,
                 porcentaje_corte_1: float, porcentaje_corte_2: float, porcentaje_corte_3: float) -> Curso:
+    if not nombre or not nombre.strip():
+        raise ValueError("El nombre del curso no puede estar vacío")
+    
     nuevo_curso = Curso(
-        nombre=nombre,
+        nombre=nombre.strip(),
         fecha_inicio=fecha_inicio,
         fecha_finalizacion=fecha_finalizacion,
         porcentaje_corte_1=porcentaje_corte_1,

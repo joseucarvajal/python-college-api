@@ -32,7 +32,7 @@ class CursoResponse(BaseModel):
 
 @router.post("/cursos", response_model=CursoResponse)
 def crear_nuevo_curso(curso: CursoCreate, db: Session = Depends(get_db)):
-    nuevo_curso = Curso(**curso.dict())
+    nuevo_curso = Curso(**curso.model_dump())
     return crear_curso(db, nuevo_curso)
 
 @router.get("/cursos", response_model=List[CursoResponse])

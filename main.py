@@ -1,10 +1,10 @@
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.infrastructure.database import get_db, init_db
 from app.domain.models import Curso
 from app.use_cases.curso_use_cases import crear_curso, listar_cursos
-from pydantic import BaseModel
+from pydantic import BaseModel, Field, field_validator, ValidationError
 from datetime import date
 
 @asynccontextmanager
@@ -22,13 +22,23 @@ class CursoCreate(BaseModel):
     porcentaje_corte_2: float
     porcentaje_corte_3: float
 
-@app.get("/")
-async def root():
-    return {"message": "Hola Mundo"}
+    @field_validator('nombre')
+    def check_nombre(cls, v):
+        print("llega pos")
+        if v is None or v == "":
+            raise ValueError("El nombre es requerido")
+        return v
+
+
+
+
 
 @app.post("/cursos")
 async def crear_nuevo_curso(curso: CursoCreate, db: Session = Depends(get_db)):
-    return crear_curso(db, **curso.dict())
+    try:
+        return crear_curso(db, **curso.model_dump())
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
 @app.get("/cursos")
 async def obtener_cursos(db: Session = Depends(get_db)):
