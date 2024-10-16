@@ -13,6 +13,8 @@ El proyecto a realizar es una aplicación, con backend y frontend que debe conte
 Parámetros técnicos de entrega del proyecto:
     1. Crear un repositorio en GitHub para el proyecto
     2. Crear varios branches
+    3. Crear pull-requests y hacer merge de los branches creados a main
+    4. Generar datos sintéticos que permitan probar los objetos del sistema
 
 Calendario:
     1. Inicio de exposiciones el 12 de noviembre. Se obtendrá el alumno que va a exponer de forma aleatoria

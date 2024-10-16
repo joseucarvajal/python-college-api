@@ -1,4 +1,5 @@
-from sqlalchemy import Column, String, Date, Float
+from sqlalchemy import Column, String, Date, Float, ForeignKey
+from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 import uuid
 from datetime import date
@@ -24,3 +25,14 @@ class Curso(Base):
         self.porcentaje_corte_1 = porcentaje_corte_1
         self.porcentaje_corte_2 = porcentaje_corte_2
         self.porcentaje_corte_3 = porcentaje_corte_3
+
+class Estudiante(Base):
+    __tablename__ = "estudiantes"
+
+    id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+    nombre = Column(String(100), nullable=False)
+    email = Column(String(100), nullable=False, unique=True)
+    curso_id = Column(String(36), ForeignKey('cursos.id'), nullable=False)
+    curso = relationship("Curso", back_populates="estudiantes")
+
+Curso.estudiantes = relationship("Estudiante", back_populates="curso")
