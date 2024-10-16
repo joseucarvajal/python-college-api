@@ -1,9 +1,11 @@
 from fastapi import FastAPI, Request
 from app.interfaces.routes import router
-from app.infrastructure.database import init_db
+from app.infrastructure.database import init_db, engine
 from contextlib import asynccontextmanager
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
+from app.domain.models import Base, Curso, Estudiante
+from sqlalchemy import inspect
 
 
 app = FastAPI()
@@ -23,11 +25,23 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
         content={"detail": errors}
     )
 
+def create_tables():
+    inspector = inspect(engine)
+    if not inspector.has_table("cursos"):
+        Curso.__table__.create(engine)
+    if not inspector.has_table("estudiantes"):
+        Estudiante.__table__.create(engine)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     init_db()
+    create_tables()
     yield
+
+# Crea las tablas
+Base.metadata.create_all(bind=engine)
+
+app = FastAPI(lifespan=lifespan)
 
 app.include_router(router)
 

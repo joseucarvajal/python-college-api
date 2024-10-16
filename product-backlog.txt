@@ -12,7 +12,6 @@ Vas a crear un API en con FastAPI[standard]. Este API debe permitir:
 
 3. Registar estudiantes en bulk a un curso especifico. Cada estudiante debe tener los siguientes datos:
     - Id: Unico y autogenerado con UUID
-    - Codigo: String: es un codigo unico para el estudiante, es valor semantico de negocio
     - Nombre completo: String
     - Email: String
     - Curso: UUID del curso al que esta registrado
