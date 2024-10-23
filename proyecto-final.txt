@@ -8,7 +8,10 @@ Van a identificar y crear un documento y presentación en Power Point los siguie
 El proyecto a realizar es una aplicación, con backend y frontend que debe contener lo siguiente:
 1. Gestionar al menos 4 objetos con al menos 5 casos de uso
 2. Un API construido con FastAPI
-3. Personalizar los mensajes de validación
+4. Personalizar los mensajes de validación
+5. Construir un frontend con cualquier herramienta que deseen: React, Vue, Angular, Svelte o Streamlit
+6. El backend y el frontend deben estar conectados
+7. El backend y el frontend deben estar en diferentes respositorios de GitHub y deben ser proyectos independientes
 
 Parámetros técnicos de entrega del proyecto:
     1. Crear un repositorio en GitHub para el proyecto
@@ -17,4 +20,11 @@ Parámetros técnicos de entrega del proyecto:
     4. Generar datos sintéticos que permitan probar los objetos del sistema
 
 Calendario:
-    1. Inicio de exposiciones el 12 de noviembre. Se obtendrá el alumno que va a exponer de forma aleatoria
+    1. Asesoría el 29 de Octubre
+    2. Inicio de exposiciones el 05 de noviembre. Estudiantes que exponen el 05 de noviembre:
+        - 82201814881	PABLO ANDRES	TENECHE LOPEZ
+        - 82202221514	SANTIAGO	HERRERA GIRALDO
+        - 82202029453	CARLOS ALFREDO	SERRANO TORRES
+        - 82202223577	CINDY VIVIANA	FORERO PINEDA
+
+    3. Segunda presentación (exposiciones) el 12 de noviembre expone el resto del grupo
